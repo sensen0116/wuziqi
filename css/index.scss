@@ -1,0 +1,290 @@
+body{
+	font-family: sans-serif;
+	margin: 0;
+	
+}
+*{
+	margin: 0;
+	padding: 0;
+}
+
+%juzhong{
+	position: absolute;
+	left: 0;
+	top:0;
+	right:0;
+	bottom:0;
+	margin: auto;
+}
+$width:600px;
+.con{
+	@extend %juzhong;
+	width: 100%;
+	height: 100%;
+	background:url(images/5.gif);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	overflow: hidden;
+	
+
+}
+.btn{
+	@extend %juzhong;
+
+	background-image: url(images/btn.jpg);
+	background-size:100% 100%;
+	width: 600px;
+	height: 600px;
+	
+	opacity: 0;
+	border-radius: 50%;
+	z-index: 999999;
+	background-color: red;
+	cursor: pointer;
+}
+.renji{
+	position: relative;
+	left: 100px;
+	top:50px;
+	text-align: center;
+	line-height: 50px;
+	width:200px;
+	height: 50px;
+	color:#fff;
+	background: orange;
+	font-size: 30px;
+	cursor: pointer;
+}
+.renren{
+	position: relative;
+	left: 100px;
+	top:110px;
+	text-align: center;
+	line-height: 50px;
+	width: 200px;
+	height: 50px;
+	color:#fff;
+	background: orange;
+	font-size: 30px;
+	cursor: pointer;
+}
+
+.head{
+	@extend %juzhong;
+	background-image: url(images/1.jpg);
+	background-size:100% 100%;
+	width: 100%;
+	height: 100%;
+	z-index: 99;
+	opacity: 1;
+
+	
+
+
+}
+.diaoxia{
+	transition:all 3.4s ease;
+    width: 0;
+    height: 0;
+	opacity: 0;
+}
+.chulai{
+	transition:opacity 5.4s ease;
+
+	opacity: 0.7;
+}
+.xiaoshi{
+	transition:all .4s ease;
+
+	width: 0;
+	height: 0;
+}
+.qipai{
+	@extend %juzhong;
+	width: $width;
+	height: $width;
+	background-image:url(images/2.jpg) ;
+	background-size:$width+108px $width+160px;
+	background-repeat: no-repeat;
+	background-position:-50px -60px;
+	border-radius: 20px;
+	
+
+	
+.qizi{
+	width: $width/15-10px;
+	height: $width/15-10px;
+	float: left;
+	border-radius: 50%;
+	z-index: 2;
+	position: relative;
+	margin: 5px;
+	
+}
+ .bai{
+	background:#fff;
+}
+ .hei{
+	background:#000;
+}
+.heng{
+	position: absolute;
+    height: 1px;
+    background:#fff;
+    left: $width/30;
+    display: block;
+    opacity: 0;
+    width: $width - $width/15;
+}
+.shu{
+    position: absolute;
+    top:$width/30;
+    background:#fff;
+    width: 1px;
+    opacity: 0;
+    display: block;
+    
+    height: $width - $width/15;
+}
+}
+
+@for $i from 0 through 14{
+	.qipai b:nth-of-type(#{$i+1}){
+	top:$width/30+$i*$width/15;
+	animation:fei .8s ease $i*0.07s forwards;
+}
+}
+
+@for $i from 0 through 14{
+	.qipai i:nth-of-type(#{$i+1}){
+	left:$width/30+$i*$width/15;
+	
+	animation:feiru .8s ease $i*0.07s forwards;
+}
+}
+
+ .qipai span{
+	display: block;
+	width:$width/80 ;
+	position: absolute;
+
+	height:$width/80 ;
+	border-radius: 50%;
+	background:#000;
+	z-index: 11;
+	animate:diaoluo 1.4s ease;
+	
+    
+
+
+	&:nth-of-type(1){
+		top:3.5*$width/15;
+		left:3.5*$width/15;
+		transform:translate3d(-45%,-45%,0);
+	}
+	&:nth-of-type(2){
+		top:3.5*$width/15;
+		left:11.5*$width/15;
+		transform:translate3d(-45%,-45%,0);
+	}
+	&:nth-of-type(3){
+		top:7.5*$width/15;
+		left:7.5*$width/15;
+		transform:translate3d(-45%,-45%,0);
+	}
+	&:nth-of-type(4){
+		top:11.5*$width/15;
+		left:3.5*$width/15;
+		transform:translate3d(-45%,-45%,0);
+	}
+	&:nth-of-type(5){
+		top:11.5*$width/15;
+		left:11.5*$width/15;
+		transform:translate3d(-45%,-45%,0);
+	}
+
+}
+
+@keyframes diaoluo{
+   0%{
+   	transform:translate3d(0,-800px,0);
+   }
+   100%{
+   	transform:translate3d(-45%,-45%,0);
+   }
+}
+@keyframes feiru{
+	0%{
+	transform:translate3d(-1000px,0px,0);	
+	
+	}
+	100%{
+	transform:translate3d(0,0,0);	
+	opacity: 1;
+	
+	}
+
+}
+
+
+@keyframes fei{
+	0%{
+	transform:translate3d(0px,2000px,0);	
+	}
+	100%{
+	transform:translate3d(0,0,0);
+	opacity: 1;
+	
+	}
+
+}
+@keyframes bian{
+	0%{
+	opacity: 1;
+	}
+	100%{
+	
+	opacity: 0;
+	
+	}
+}
+
+
+  $w:100px;
+  %juzhong{
+	position: absolute;
+	left: 0;
+	top:0;
+	bottom:0;
+	right:0;
+	margin: auto;
+}
+.one{
+	position: relative;
+	width: 100px;
+	height: 100px;
+	left: 0;
+	top:0;
+	
+	border-radius: 50%;
+	background-image: url(images/zb.jpg);
+	background-size: cover;
+}
+.one1{
+	position: absolute;
+	left:51px;
+	top:12px;
+	width: 2px;
+	height: 38px;
+	background-color: #000;
+	transform-origin:bottom center;
+	z-index: 99999;
+	background-image: url(images/zz.jpg)
+
+
+}
+.one1 img{
+	width: 30px;
+	height: 38px;
+
+}
